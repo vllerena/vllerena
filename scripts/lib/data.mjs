@@ -113,18 +113,24 @@ export async function loadStats(token) {
     },
   };
 
-  // ¿Este token ve los repos privados? Entonces los totales son completos.
-  const seesPrivate = data.user.privateRepos.totalCount > 0 && cc.restrictedContributionsCount === 0;
-  if (seesPrivate) {
+  // Son dos permisos distintos. Ver los repos privados alcanza para los
+  // lenguajes; el detalle de commits y pull requests solo lo ve un token que
+  // lea las contribuciones privadas (si no, GitHub las cuenta como «restringidas»).
+  const seesRepos = data.user.privateRepos.totalCount > 0;
+  const seesContribs = cc.restrictedContributionsCount === 0;
+  console.log(`· repos privados visibles: ${data.user.privateRepos.totalCount} · contribuciones restringidas: ${cc.restrictedContributionsCount}`);
+  if (seesRepos) {
+    stats.languages = await languages(token);
+    stats.languagesAt = stats.updatedAt;
+    console.log('· lenguajes actualizados');
+  } else console.log(`· sin acceso a repos privados: los lenguajes quedan como el ${cache.languagesAt ?? cache.privateAt ?? '—'}`);
+  if (seesRepos && seesContribs) {
     stats.commits = cc.totalCommitContributions;
     stats.pullRequests = cc.totalPullRequestContributions;
     stats.repos = cc.totalRepositoriesWithContributedCommits;
-    stats.languages = await languages(token);
     stats.privateAt = stats.updatedAt;
-    console.log('· token con acceso a privados: commits, PRs y lenguajes actualizados');
-  } else {
-    console.log(`· token sin acceso a privados: commits, PRs y lenguajes quedan como el ${cache.privateAt ?? '—'}`);
-  }
+    console.log('· commits, PRs y repos actualizados');
+  } else console.log(`· commits, PRs y repos quedan como el ${cache.privateAt ?? '—'}`);
 
   fs.mkdirSync(path.dirname(CACHE), { recursive: true });
   fs.writeFileSync(CACHE, `${JSON.stringify(stats)}\n`);
