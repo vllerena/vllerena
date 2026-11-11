@@ -71,6 +71,34 @@ async function languages(token) {
   return top;
 }
 
+/** Commits propios en la rama principal de cada repo y PRs creados, en 12 meses. */
+async function authored(token, id) {
+  const since = new Date(Date.now() - 365 * 864e5).toISOString();
+  let commits = 0;
+  let repos = 0;
+  let cursor = null;
+  do {
+    const data = await gql(
+      token,
+      `query($login:String!,$cursor:String,$since:GitTimestamp!,$id:ID!){ user(login:$login){ repositories(first:50, after:$cursor, ownerAffiliations:OWNER, isFork:false){
+        pageInfo{hasNextPage endCursor}
+        nodes{ defaultBranchRef{ target{ ... on Commit{ history(since:$since, author:{id:$id}){ totalCount } } } } } } } }`,
+      { login: USER, cursor, since, id },
+    );
+    const page = data.user.repositories;
+    for (const repo of page.nodes) {
+      const n = repo.defaultBranchRef?.target?.history?.totalCount ?? 0;
+      commits += n;
+      if (n > 0) repos++;
+    }
+    cursor = page.pageInfo.hasNextPage ? page.pageInfo.endCursor : null;
+  } while (cursor);
+  const prs = await gql(token, 'query($q:String!){ search(query:$q, type:ISSUE, first:1){ issueCount } }', {
+    q: `author:${USER} type:pr created:>=${since.slice(0, 10)}`,
+  });
+  return { commits, repos, pullRequests: prs.search.issueCount };
+}
+
 export async function loadStats(token) {
   const cache = fs.existsSync(CACHE) ? JSON.parse(fs.readFileSync(CACHE, 'utf8')) : {};
   if (!token) {
@@ -82,6 +110,7 @@ export async function loadStats(token) {
   const data = await gql(
     token,
     `query($login:String!){ user(login:$login){
+      id
       privateRepos: repositories(ownerAffiliations:OWNER, privacy:PRIVATE){ totalCount }
       contributionsCollection{
         totalCommitContributions totalPullRequestContributions restrictedContributionsCount
@@ -113,24 +142,22 @@ export async function loadStats(token) {
     },
   };
 
-  // Son dos permisos distintos. Ver los repos privados alcanza para los
-  // lenguajes; el detalle de commits y pull requests solo lo ve un token que
-  // lea las contribuciones privadas (si no, GitHub las cuenta como «restringidas»).
+  // Con un token que ve los repos privados, commits y pull requests se cuentan
+  // desde los propios repos. La API de contribuciones no sirve aquí: a un token
+  // fine-grained le devuelve las privadas como «restringidas», sin detalle.
   const seesRepos = data.user.privateRepos.totalCount > 0;
-  const seesContribs = cc.restrictedContributionsCount === 0;
-  console.log(`· repos privados visibles: ${data.user.privateRepos.totalCount} · contribuciones restringidas: ${cc.restrictedContributionsCount}`);
+  console.log(`· repos privados visibles: ${data.user.privateRepos.totalCount}`);
   if (seesRepos) {
     stats.languages = await languages(token);
-    stats.languagesAt = stats.updatedAt;
-    console.log('· lenguajes actualizados');
-  } else console.log(`· sin acceso a repos privados: los lenguajes quedan como el ${cache.languagesAt ?? cache.privateAt ?? '—'}`);
-  if (seesRepos && seesContribs) {
-    stats.commits = cc.totalCommitContributions;
-    stats.pullRequests = cc.totalPullRequestContributions;
-    stats.repos = cc.totalRepositoriesWithContributedCommits;
+    const work = await authored(token, data.user.id);
+    stats.commits = work.commits;
+    stats.repos = work.repos;
+    // Sin permiso de lectura de pull requests la búsqueda solo ve los públicos.
+    if (work.pullRequests > 0 || !cache.pullRequests) stats.pullRequests = work.pullRequests;
+    else console.log('· pull requests: el token no los ve; se conserva el último valor');
     stats.privateAt = stats.updatedAt;
-    console.log('· commits, PRs y repos actualizados');
-  } else console.log(`· commits, PRs y repos quedan como el ${cache.privateAt ?? '—'}`);
+    console.log(`· lenguajes, ${stats.commits} commits en ${stats.repos} repos y ${stats.pullRequests} PRs actualizados`);
+  } else console.log(`· sin acceso a repos privados: lenguajes, commits y PRs quedan como el ${cache.privateAt ?? '—'}`);
 
   fs.mkdirSync(path.dirname(CACHE), { recursive: true });
   fs.writeFileSync(CACHE, `${JSON.stringify(stats)}\n`);
