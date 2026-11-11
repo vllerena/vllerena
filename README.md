@@ -22,7 +22,7 @@ Lo más importante lo aprendí con un CRM técnicamente impecable que nadie usó
 
 **Lo que aporto a un equipo**
 
-- **CRM y RevOps** — arquitectura e implementación de HubSpot Enterprise, automatización y reporting. Certificado en 5 Hubs.
+- **CRM y RevOps** — arquitectura e implementación de HubSpot Enterprise, automatización y reporting. 10 certificaciones vigentes de HubSpot Academy.
 - **Integraciones** — APIs, webhooks y middleware entre CRM, ERP, ecommerce, POS, WhatsApp y facturación SUNAT.
 - **Producto fullstack** — de la base de datos al deploy: Laravel o NestJS, React, Vue o Next.js, PostgreSQL, multi-tenant.
 - **IA aplicada** — agentes con tool calling, MCP y automatización con n8n, con revisión humana donde importa.
@@ -78,8 +78,43 @@ Casi todo mi código vive en repositorios privados, de clientes y de producto. C
 - Integración en n8n entre la app de ventas de una financiera y HubSpot: contactos, ventas y asociaciones sincronizados.
 - **1er puesto, Innovatec Cajamarca 2019**, con un sistema de gestión académica.
 
-**Formación** — Ingeniero de Sistemas Computacionales, Universidad Privada del Norte.<br>
-**Certificaciones** — HubSpot Academy en 5 Hubs (Marketing, Sales, Service, Operations y CMS) · Claude Code in Action · Cisco CCNA R&S y Cybersecurity Essentials · PCAP Python.
+**Formación** — Ingeniero de Sistemas Computacionales, Universidad Privada del Norte (título profesional, 2026) · Inglés intermedio certificado por UPN.
+
+### Certificaciones
+
+| Emisor | Certificación | Vigencia |
+|---|---|---|
+| **HubSpot Academy** | Solutions Partner | oct 2026 – nov 2028 |
+| | Platform Consulting | oct 2026 – nov 2027 |
+| | Sales Hub Software | oct 2026 – nov 2027 |
+| | Content Hub for Marketers | oct 2026 – nov 2027 |
+| | Reporting | oct 2026 – nov 2027 |
+| | Data Integrations | oct 2026 – nov 2027 |
+| | Integrating With HubSpot I: Foundations | oct 2026 – nov 2027 |
+| | AEO Fundamentals | oct 2026 – nov 2028 |
+| | AI Essentials · Breeze Essentials for Partners (badges) | desde oct 2026 |
+| **Anthropic** | Claude with the Anthropic API | abr 2026 |
+| | Claude Code in Action | 2026 |
+| | Introduction to Model Context Protocol | abr 2026 |
+| | Introduction to agent skills | 2026 |
+| **Gestión y agilidad** | Scrum Foundation Professional Certificate (CertiProf) | — |
+| | Certified Associate in Scrum Fundamentals (SkillFront) | — |
+| | Project Management Essentials (MSI) | — |
+| | Six Sigma White Belt | — |
+| **Redes y seguridad** | Cisco CCNA 2 | 2018 |
+| | Ciberseguridad y Ciberdefensa (UPN) | — |
+
+<details>
+<summary><b>Formación complementaria</b> — más de 30 cursos</summary>
+<br>
+
+- **HubSpot Academy, ciclos anteriores** — Marketing Hub Software, Service Hub Software, Revenue Operations, CMS Hub for Marketers, CMS for Developers, Inbound Marketing, Inbound Sales, Marketing Hub Implementation, Sales Hub Implementation, Objectives-Based Onboarding, Salesforce Integration.
+- **IA y WhatsApp** — Desarrollo de chatbots con WhatsApp e inteligencia artificial (Blumbit) · Python Fundamentals for ML (CETI).
+- **Desarrollo** — Especialista en desarrollo de software de facturación electrónica con PHP (CETI) · Especialista en desarrollo frontend con Angular y React (CETI) · JavaScript Moderno y Dart: de cero hasta los detalles (DevTalles) · PHP 8 y MySQL, Ecommerce con Laravel, Livewire, Tailwind y Alpine, JavaScript Moderno y Tiendas virtuales con WordPress y WooCommerce (Udemy).
+- **Platzi, 19 cursos** — Frontend Developer, HTML y CSS, Mobile First, terminal y línea de comandos, pensamiento lógico, Product Management, comunicación y colaboración en equipos.
+- **Growth** — Growth Rockstar, 10.ª edición.
+
+</details>
 
 ### Escribo sobre esto
 
