@@ -1,0 +1,13 @@
+{
+  "name": "vllerena-profile",
+  "private": true,
+  "type": "module",
+  "description": "Genera las piezas SVG del README de perfil con el design system de victorllerena.com",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "readme": "node scripts/readme.mjs"
+  },
+  "dependencies": {
+    "opentype.js": "1.3.4"
+  }
+}

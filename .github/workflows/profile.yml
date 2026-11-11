@@ -1,0 +1,45 @@
+name: Actualizar perfil
+
+# Regenera las piezas SVG del README con los datos del día.
+# Con el token del workflow se actualiza el calendario de contribuciones.
+# Commits, pull requests y lenguajes salen de repos privados: para que también
+# se refresquen, crear un token personal de solo lectura y guardarlo como
+# secreto PROFILE_TOKEN. Sin él, esas tres cifras conservan su último valor.
+
+on:
+  schedule:
+    - cron: '17 10 * * *' # 05:17 en Lima
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['scripts/**', 'assets/brand/**', 'assets/fonts/**', 'assets/icons/**', 'package*.json']
+
+permissions:
+  contents: write
+
+concurrency:
+  group: profile
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+        env:
+          GH_TOKEN: ${{ secrets.PROFILE_TOKEN || github.token }}
+      - name: Guardar cambios
+        run: |
+          if [ -n "$(git status --porcelain assets/generated data)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add assets/generated data
+            git commit -m "chore: actualiza las cifras del perfil"
+            git push
+          fi
