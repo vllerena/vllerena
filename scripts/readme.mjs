@@ -33,7 +33,7 @@ ${btn('email', 'mailto:hola@victorllerena.com', 'hola@victorllerena.com')}
 
 Soy ingeniero de sistemas y llevo más de 6 años construyendo software. Hoy soy **CRM & AI Manager en Impulse**, el primer partner Diamond de HubSpot en Perú, donde diseño arquitecturas de CRM, integraciones y agentes de IA para empresas de LATAM. En paralelo construyo **[Stackea Labs](https://stackealabs.com)**, mi marca de productos API para el mercado peruano.
 
-Lo más importante lo aprendí con un CRM técnicamente impecable que nadie usó: los vendedores eran de campo y vendían por WhatsApp, desde el celular. Desde entonces **trabajo desde el problema, no desde la herramienta**.
+**Trabajo desde el problema, no desde la herramienta:** antes de elegir stack, entiendo cómo vende, cobra y atiende el negocio, y construyo para el equipo que lo va a usar.
 
 ${full('proof', '+6 años construyendo software · +15 implementaciones de HubSpot CRM · 17 sedes de una cadena en un solo sistema · ~75 sitios migrados a HubSpot CMS')}
 
