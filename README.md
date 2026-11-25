@@ -22,7 +22,7 @@ Soy ingeniero de sistemas y llevo más de 6 años construyendo software. Hoy soy
 
 **Lo que aporto a un equipo**
 
-- **CRM y RevOps** — arquitectura e implementación de HubSpot Enterprise, automatización y reporting. 10 certificaciones vigentes de HubSpot Academy.
+- **CRM y RevOps** — arquitectura e implementación de HubSpot Enterprise, automatización y reporting. 11 certificaciones vigentes de HubSpot Academy.
 - **Integraciones** — APIs, webhooks y middleware entre CRM, ERP, ecommerce, POS, WhatsApp y facturación SUNAT.
 - **Producto fullstack** — de la base de datos al deploy: Laravel o NestJS, React, Vue o Next.js, PostgreSQL, multi-tenant.
 - **IA aplicada** — agentes con tool calling, MCP y automatización con n8n, con revisión humana donde importa.
@@ -78,41 +78,51 @@ Casi todo mi código vive en repositorios privados, de clientes y de producto. C
 - Integración en n8n entre la app de ventas de una financiera y HubSpot: contactos, ventas y asociaciones sincronizados.
 - **1er puesto, Innovatec Cajamarca 2019**, con un sistema de gestión académica.
 
-**Formación** — Ingeniero de Sistemas Computacionales, Universidad Privada del Norte (título profesional, 2026) · Inglés intermedio certificado por UPN.
+**Formación** — Ingeniero de Sistemas Computacionales, Universidad Privada del Norte (título profesional, sep 2026; bachiller, 2020) · Inglés intermedio, programa regular UPN (2020).
 
 ### Certificaciones
 
-| Emisor | Certificación | Vigencia |
+**HubSpot Academy — 11 vigentes**
+
+| Certificación | Vigencia |
+|---|---|
+| Solutions Partner | oct 2026 – nov 2028 |
+| AEO Fundamentals | oct 2026 – nov 2028 |
+| HubSpot Architecture I: Data Models and APIs | nov 2026 – dic 2027 |
+| Integrating With HubSpot I: Foundations | oct 2026 – nov 2027 |
+| Data Integrations | oct 2026 – nov 2027 |
+| Platform Consulting | oct 2026 – nov 2027 |
+| Sales Hub Software | oct 2026 – nov 2027 |
+| Content Hub for Marketers | oct 2026 – nov 2027 |
+| Reporting | oct 2026 – nov 2027 |
+| AI Essentials · Breeze Essentials for Partners (badges) | desde oct 2026 |
+
+**IA, desarrollo y gestión**
+
+| Emisor | Certificación | Año |
 |---|---|---|
-| **HubSpot Academy** | Solutions Partner | oct 2026 – nov 2028 |
-| | Platform Consulting | oct 2026 – nov 2027 |
-| | Sales Hub Software | oct 2026 – nov 2027 |
-| | Content Hub for Marketers | oct 2026 – nov 2027 |
-| | Reporting | oct 2026 – nov 2027 |
-| | Data Integrations | oct 2026 – nov 2027 |
-| | Integrating With HubSpot I: Foundations | oct 2026 – nov 2027 |
-| | AEO Fundamentals | oct 2026 – nov 2028 |
-| | AI Essentials · Breeze Essentials for Partners (badges) | desde oct 2026 |
-| **Anthropic** | Claude with the Anthropic API | abr 2026 |
-| | Claude Code in Action | 2026 |
-| | Introduction to Model Context Protocol | abr 2026 |
-| | Introduction to agent skills | 2026 |
-| **Gestión y agilidad** | Scrum Foundation Professional Certificate (CertiProf) | — |
-| | Certified Associate in Scrum Fundamentals (SkillFront) | — |
-| | Project Management Essentials (MSI) | — |
-| | Six Sigma White Belt | — |
-| **Redes y seguridad** | Cisco CCNA 2 | 2018 |
-| | Ciberseguridad y Ciberdefensa (UPN) | — |
+| Anthropic | Claude with the Anthropic API · Introduction to Model Context Protocol · Claude Code in Action · Introduction to agent skills | 2026 |
+| CETI | Diplomado Python Fundamentals for Machine Learning (150 h) | 2025 |
+| CETI | Diplomado Especialista en Desarrollo Frontend con Angular y React (150 h) | 2024 |
+| CETI | Diplomado Especialista en Desarrollo de Software de Facturación Electrónica con PHP (100 h) | 2021 |
+| CertiProf | Scrum Foundation Professional Certificate (SFPC) | 2023 |
+| SkillFront | Certified Associate in Scrum Fundamentals (CASF) | 2023 |
+| Management and Strategy Institute | Project Management Essentials Certified | 2023 |
+| Six Sigma | White Belt | 2023 |
+| Growth Rockstar | Programa para líderes de growth (8 semanas) | 2024 |
+| Universidad Privada del Norte | Ciberseguridad y Ciberdefensa (52 h) | 2020 |
+| Cisco Networking Academy | CCNA Routing & Switching: Principios básicos de routing y switching | 2018 |
 
 <details>
-<summary><b>Formación complementaria</b> — más de 30 cursos</summary>
+<summary><b>Formación complementaria</b> — 30 cursos más</summary>
 <br>
 
 - **HubSpot Academy, ciclos anteriores** — Marketing Hub Software, Service Hub Software, Revenue Operations, CMS Hub for Marketers, CMS for Developers, Inbound Marketing, Inbound Sales, Marketing Hub Implementation, Sales Hub Implementation, Objectives-Based Onboarding, Salesforce Integration.
-- **IA y WhatsApp** — Desarrollo de chatbots con WhatsApp e inteligencia artificial (Blumbit) · Python Fundamentals for ML (CETI).
-- **Desarrollo** — Especialista en desarrollo de software de facturación electrónica con PHP (CETI) · Especialista en desarrollo frontend con Angular y React (CETI) · JavaScript Moderno y Dart: de cero hasta los detalles (DevTalles) · PHP 8 y MySQL, Ecommerce con Laravel, Livewire, Tailwind y Alpine, JavaScript Moderno y Tiendas virtuales con WordPress y WooCommerce (Udemy).
-- **Platzi, 19 cursos** — Frontend Developer, HTML y CSS, Mobile First, terminal y línea de comandos, pensamiento lógico, Product Management, comunicación y colaboración en equipos.
-- **Growth** — Growth Rockstar, 10.ª edición.
+- **IA y WhatsApp** — Creación de chatbots para WhatsApp con base de datos e IA (Blumbit, 2025).
+- **Udemy** — Ecommerce con Laravel, Livewire, Tailwind y Alpine · Tiendas virtuales con WordPress y WooCommerce · JavaScript Moderno: guía para dominar el lenguaje · JavaScript Moderno: +20 proyectos · PHP y MySQL desde cero (2020–2024).
+- **DevTalles** — Dart: de cero hasta los detalles · JavaScript Moderno (2023–2024).
+- **Platzi, 19 cursos (2022)** — Frontend Developer y su curso práctico, HTML y CSS, Responsive Design Mobile First, Fundamentos de Ingeniería de Software, Product Management, terminal y línea de comandos, algoritmos y pensamiento lógico, comunicación efectiva y colaboración entre diseño y desarrollo.
+- **Eventos** — Sesiones de valor de la Hackathon Acelera Cajamarca 2022 (Secretaría de Gobierno y Transformación Digital, PCM).
 
 </details>
 
